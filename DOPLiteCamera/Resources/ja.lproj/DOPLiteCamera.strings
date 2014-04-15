@@ -1,0 +1,11 @@
+/* 
+  DOPLiteCamera.strings
+  DOPLiteCamera
+
+  Created by Yongwei Dou on 2014/04/14.
+  Copyright (c) 2014年 DODOPIPE LIMITED. All rights reserved.
+*/
+"Use Photos" = "写真を使用する";
+"Cancel"     = "キャンセル";
+"Post"       = "投稿する";
+"CommentPlaceHolder" = "美しい写真にコメントを書きましょう...";

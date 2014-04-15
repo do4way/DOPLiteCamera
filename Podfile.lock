@@ -1,0 +1,13 @@
+PODS:
+  - OCMock (2.2.4)
+  - UIView+AutoLayout (1.3.0)
+
+DEPENDENCIES:
+  - OCMock (~> 2.2.3)
+  - UIView+AutoLayout (~> 1.3.0)
+
+SPEC CHECKSUMS:
+  OCMock: 5008fae4b4789b8fc3e48cd7660f2eb5ef8ce89e
+  UIView+AutoLayout: 43373a18797954fd8ee3b1423af364f1b80a2af8
+
+COCOAPODS: 0.30.0
