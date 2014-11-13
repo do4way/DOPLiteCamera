@@ -86,6 +86,7 @@ static CGFloat const COMPS_MARGIN_RIGHT = 10;
         self.scrollView.contentOffset = CGPointMake(50,0);
     }
     
+    [self setupConstraints];
 	// Do any additional setup after loading the view.
 }
 
@@ -93,19 +94,8 @@ static CGFloat const COMPS_MARGIN_RIGHT = 10;
 {
     [super updateViewConstraints];
     if (self.didUpdateConstraints) return;
-    [self.toolbar autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:0];
-    [self.toolbar autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:0];
-    [self.toolbar autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:0];
-    [self.toolbar autoSetDimension:ALDimensionHeight toSize:TOOLBAR_HEIGHT];
-    
-    [self.comment autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.toolbar withOffset:COMMENT_TEXT_MARGHIN_RELATED_TOP];
-    [self.comment autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:COMPS_MARGIN_LEFT];
-    [self.comment autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:COMPS_MARGIN_RIGHT];
-    [self.comment autoSetDimension:ALDimensionHeight toSize:COMMENT_TEXT_HEIGHT];
-    
-    [self updatePhotoViewsConstraints];
-    self.didUpdateConstraints = YES;
-    
+
+    [self setupConstraints];
     
 }
 
@@ -245,5 +235,22 @@ static CGFloat const COMPS_MARGIN_RIGHT = 10;
 - (CGFloat) photosWidth
 {
     return ([self.photoUrls count] + 1) * (PHOTOS_CELL_PADDING + PHOTO_WIDTH);
+}
+
+#pragma mark - private method
+-(void)setupConstraints
+{
+    [self.toolbar autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:0];
+    [self.toolbar autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:0];
+    [self.toolbar autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:0];
+    [self.toolbar autoSetDimension:ALDimensionHeight toSize:TOOLBAR_HEIGHT];
+    
+    [self.comment autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.toolbar withOffset:COMMENT_TEXT_MARGHIN_RELATED_TOP];
+    [self.comment autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:COMPS_MARGIN_LEFT];
+    [self.comment autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:COMPS_MARGIN_RIGHT];
+    [self.comment autoSetDimension:ALDimensionHeight toSize:COMMENT_TEXT_HEIGHT];
+    
+    [self updatePhotoViewsConstraints];
+    self.didUpdateConstraints = YES;
 }
 @end
